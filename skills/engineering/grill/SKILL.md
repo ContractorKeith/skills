@@ -14,7 +14,7 @@ session can find it.
 ## The interview
 
 Interview the user about every aspect of the plan. Walk each branch of the
-design tree, resolving dependencies between decisions one at a time.
+design tree, resolving decisions in dependency order.
 
 - **Batch 3-4 related questions per round.** Group questions that share a
   decision area (scope, data model, UX, rollout) into one batch, ask it, and

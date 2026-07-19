@@ -150,8 +150,8 @@ must answer for themselves). Never fake the human half of a HITL ticket.
 - **Prototype — HITL.** Make a rough artifact to react to when the real
   question is behavior, shape, or feel. Use `/prototype`; link the artifact
   from the resolution.
-- **Grilling — HITL.** Ask the user one question at a time until the decision
-  is real. Use `/grill`. This is the default when the unknown is a choice the
+- **Grilling — HITL.** Interview the user in small batches of related
+  questions until the decision is real. Use `/grill`. This is the default when the unknown is a choice the
   user must make.
 - **Task — AFK or HITL.** Do the smallest manual action needed to unblock a
   decision: provision access, sign up for a service, or expose data in a form
