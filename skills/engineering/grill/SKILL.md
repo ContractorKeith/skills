@@ -1,6 +1,6 @@
 ---
 name: grill
-description: A relentless one-question-at-a-time interview that stress-tests a plan or design before anything gets built, leaving a paper trail of resolved terms (CONTEXT.md) and decisions (ADRs) as it goes. Use when the user wants to pressure-test an idea, sharpen a plan, or says "grill me".
+description: A relentless interview — small batches of related questions — that stress-tests a plan or design before anything gets built, leaving a paper trail of resolved terms (CONTEXT.md) and decisions (ADRs) as it goes. Use when the user wants to pressure-test an idea, sharpen a plan, or says "grill me".
 disable-model-invocation: true
 ---
 
@@ -16,9 +16,14 @@ session can find it.
 Interview the user about every aspect of the plan. Walk each branch of the
 design tree, resolving dependencies between decisions one at a time.
 
-- **One question at a time.** Ask, wait for the answer, then ask the next.
-  A wall of questions is bewildering. (If your CLI has a structured question
-  tool like AskUserQuestion, use it — still one question per call.)
+- **Batch 3-4 related questions per round.** Group questions that share a
+  decision area (scope, data model, UX, rollout) into one batch, ask it, and
+  wait for the answers before the next round. One giant wall of questions is
+  bewildering; one question per round wastes time and tokens. Never mix
+  unrelated decision areas in a batch, and never batch a question whose
+  answer depends on another question in the same batch — dependent questions
+  wait for the next round. (If your CLI has a structured question tool like
+  AskUserQuestion, use it — up to 4 questions per call fits a round exactly.)
 - **Bring a recommendation to every question.** Never ask an open "what do
   you think?" — present the options and say which one you'd pick and why.
 - **Facts are yours, decisions are theirs.** If something can be answered by
