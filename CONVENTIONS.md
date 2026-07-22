@@ -6,7 +6,7 @@ rewriting a skill.
 ## Layout
 
 ```
-skills/engineering/<skill-name>/
+skills/<skill-name>/
 ├── SKILL.md            # the skill itself
 ├── agents/
 │   └── openai.yaml     # Codex-facing metadata
