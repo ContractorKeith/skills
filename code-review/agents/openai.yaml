@@ -1,5 +1,5 @@
 interface:
   display_name: "Code Review"
-  short_description: "Check a diff against standards and its ticket"
+  short_description: "Review defects, standards, and ticket compliance"
 policy:
   allow_implicit_invocation: true

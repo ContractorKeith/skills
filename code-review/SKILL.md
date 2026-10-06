@@ -1,19 +1,35 @@
 ---
 name: code-review
-description: "Reviews a change since a fixed point on two independent axes: documented repository standards and the originating ticket or spec. Use before committing or merging a ticket, when reviewing a branch or PR, or when asked to review since a base ref."
+description: "Reviews diffs for correctness, security, performance, test coverage, repository standards, and ticket or spec compliance. Use before committing or merging a ticket, when reviewing a branch or PR, or when asked to review since a base ref."
+license: MIT
+metadata:
+  author: ContractorKeith
+  version: "1.1.0"
+  domain: quality
+  scope: review
+  output-format: report
+  related-skills: implement, tdd, debug, ship
 ---
 
 # Code Review
 
 Review the same diff two ways and keep the answers separate.
 
-- **Standards:** Does the change follow this repository’s documented rules and
-  avoid meaningful design smells?
+- **Standards:** Is the change technically sound, and does it follow this
+  repository’s documented rules?
 - **Spec:** Does the change deliver the originating ticket or specification —
   no less and no more?
 
 One axis cannot excuse a failure on the other. Clean code can build the wrong
 thing; a correct feature can still ignore the project’s rules.
+
+## Reference guide
+
+| Reference | Read when |
+|---|---|
+| [REVIEW-CHECKLIST.md](REVIEW-CHECKLIST.md) | Starting Standards; select checks relevant to the change |
+| [FINDING-EXAMPLES.md](FINDING-EXAMPLES.md) | Calibrating severity, confidence, and evidence |
+| [REPORT-TEMPLATE.md](REPORT-TEMPLATE.md) | Writing the report, including clean or incomplete reviews |
 
 ## 1. Pin the comparison
 
@@ -28,13 +44,17 @@ git log <base>..HEAD --oneline
 ```
 
 The three-dot diff compares `HEAD` with the merge-base, which is the default
-review artifact. Also check that the diff is non-empty and run `git diff
---check` before sending anyone into a review.
+review artifact. Pin the resolved base and head commits so reviewers see the
+same artifact. Check that the diff is non-empty and run
+`git diff --check <base>...HEAD` before delegation.
 
 For `/implement` work that has not been committed yet, review the current
 worktree against the same fixed point with `git diff <base>` instead. Include
 staged changes and list untracked files explicitly; do not silently review an
 empty `...HEAD` diff and miss the ticket work.
+Run `git diff --check <base>` in this mode and read relevant untracked files;
+listing their names alone is not a review. Capture the worktree artifact before
+delegation, and record exclusions of unrelated files.
 
 If the caller supplied no base, ask for one rather than guessing. If there is
 no change, report that plainly and stop.
@@ -57,6 +77,8 @@ Read the repository’s standards sources before reviewing: root and applicable
 subdirectory `AGENTS.md` or `CLAUDE.md`, `CONTRIBUTING.md`, coding standards,
 test guidance, and relevant `CONTEXT.md` or ADRs. Repository rules outrank the
 smell baseline below.
+Summarize the requested behavior in one sentence. Repository design preferences
+cannot excuse demonstrated bugs or security flaws.
 
 ## 3. Review independently
 
@@ -68,9 +90,14 @@ other.
 
 ### Standards pass
 
-Check every changed hunk against the documented rules. Label each finding as:
+Read REVIEW-CHECKLIST.md. Check every changed hunk and trace callers, data
+flows, and tests far enough to establish behavior. Check correctness, security,
+performance, and test quality even when repository guidance is silent. Run
+focused checks when useful; distinguish inspected tests from executed ones.
+Verify delegated findings before reporting them. Label each finding as:
 
 - **documented standard** — cite the file and rule; or
+- **technical defect** — demonstrate a concrete failure or risk; or
 - **judgment call** — cite a relevant smell below and explain why it matters.
 
 Use this smell baseline only where tooling does not already enforce the rule:
@@ -117,6 +144,12 @@ an optional idea a missing requirement.
 ## 4. Report without blending the axes
 
 Give findings with file and line, evidence, impact, and a practical next step.
+Use FINDING-EXAMPLES.md and REPORT-TEMPLATE.md. Calibrate severity and confidence
+independently. Report introduced defects or old defects made reachable by this
+change; exclude unrelated pre-existing issues. Verify suspected problems against
+surrounding code. Unresolved hypotheses belong in limitations, not blocking
+findings. Never invent issues to fill the template or imply a clean review
+proves absence of bugs.
 Keep these headings distinct:
 
 ```md

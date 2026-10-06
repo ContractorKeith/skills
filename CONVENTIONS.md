@@ -30,6 +30,11 @@ Model-invoked skills (the agent reaches for them mid-task): `tdd`,
 `code-review`, `debug`, `merge-conflicts`, `research`, `codebase-design`,
 `prototype`. Model-invoked skills omit `disable-model-invocation`.
 
+Skills may also declare `license: MIT` and a `metadata` mapping with string
+values for author, version, domain, scope, output-format, and related-skills.
+These describe the package; execution rules belong in the body. Link supporting
+references from SKILL.md with guidance on when to read them.
+
 ## agents/openai.yaml
 
 Codex reads this; Claude Code ignores it. Mirror the frontmatter:
