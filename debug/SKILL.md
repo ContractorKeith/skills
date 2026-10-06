@@ -1,6 +1,14 @@
 ---
 name: debug
 description: Diagnose hard bugs and performance regressions with a disciplined evidence loop. Use when the user says "diagnose" or "debug this", or reports something broken, throwing, failing, flaky, or slow.
+license: MIT
+metadata:
+  author: ContractorKeith
+  version: "1.1.0"
+  domain: engineering
+  scope: debugging
+  output-format: verified-fix
+  related-skills: code-review, codebase-design, tdd, ship
 ---
 
 # Debug
@@ -11,6 +19,8 @@ Skip a phase only when you can state why it does not apply.
 
 Before touching code, read the repo's `CONTEXT.md` if present and the ADRs
 nearest the affected area. Learn the local terms and decisions first.
+Record the starting commit with `git rev-parse HEAD` and note any pre-existing
+worktree changes so the final review can isolate this fix.
 
 ## 1. Build the feedback loop
 
@@ -142,3 +152,14 @@ Before reporting success, verify all of the following:
 Ask what would have prevented the issue. If the answer is structural—hidden
 coupling, tangled paths, or no usable test seam—route the concrete finding to
 `/codebase-design` after the fix is secure.
+
+## 7. Review the fix
+
+Run `/code-review` against the recorded starting commit before committing or
+handing the fix to `/ship`. Supply the reported failure, relevant requirements,
+root-cause evidence, and checks run. For an uncommitted fix, review the worktree
+diff and relevant untracked files; exclude unrelated pre-existing changes.
+
+Fix material findings, rerun the regression test and original feedback loop,
+and repeat review when those fixes materially change the diff. A green repro
+alone does not establish that the fix is safe or within scope.
