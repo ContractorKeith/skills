@@ -1,6 +1,14 @@
 ---
 name: research
-description: "The research skill investigates a problem before planning or implementation by clarifying intent, running proportionate parallel research, and synthesizing evidence into a recommendation. Use it for feature planning, bug investigation, refactoring, unfamiliar systems, or explicit deep dives."
+description: The research skill investigates a problem before planning or implementation by clarifying intent, running proportionate parallel research, and synthesizing evidence into a recommendation. Use it for feature planning, bug investigation, refactoring, unfamiliar systems, or explicit deep dives.
+license: MIT
+metadata:
+  author: ContractorKeith
+  version: 1.0.0
+  domain: research
+  scope: investigation
+  output-format: report
+  related-skills: grill, spec
 ---
 
 # Research

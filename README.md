@@ -55,8 +55,15 @@ pushed, verified.
 ## Conventions
 
 Structure, voice, frontmatter, and the cross-reference map live in
-[CONVENTIONS.md](./CONVENTIONS.md). Every skill ships an `agents/openai.yaml`
+[CONVENTIONS.md](CONVENTIONS.md). Every skill ships an `agents/openai.yaml`
 so Codex gets proper display metadata alongside Claude Code's frontmatter.
+
+## Validation
+
+Run `python3 scripts/validate-skill-bundles.py .` to check required metadata,
+reference links, and bundle layout. Run `python3 scripts/validate-skill-bundles.test.py`
+for validator tests. These checks use the Python standard library; full YAML
+schema validation remains a separate package check.
 
 ## Credits
 

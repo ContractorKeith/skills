@@ -4,7 +4,7 @@ description: Provide a shared vocabulary and practical rules for designing deep 
 license: MIT
 metadata:
   author: ContractorKeith
-  version: "1.1.0"
+  version: 1.1.1
   domain: architecture
   scope: design
   output-format: design-guidance
@@ -123,6 +123,6 @@ class's public methods; callers must know more than types alone.
 ## Continue with the right reference
 
 - For safely consolidating a shallow cluster around its dependencies, read
-  [DEEPENING.md](DEEPENING.md).
+  [DEEPENING.md](references/DEEPENING.md).
 - For comparing several credible interfaces before committing to one, read
-  [DESIGN-IT-TWICE.md](DESIGN-IT-TWICE.md).
+  [DESIGN-IT-TWICE.md](references/DESIGN-IT-TWICE.md).

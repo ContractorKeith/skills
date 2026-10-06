@@ -1,7 +1,15 @@
 ---
 name: handoff
-description: "The handoff skill captures the current session in a concise file so a fresh agent can continue without replaying the conversation. Use it when pausing work, switching sessions, or pairing with `/prototype`."
+description: The handoff skill captures the current session in a concise file so a fresh agent can continue without replaying the conversation. Use it when pausing work, switching sessions, or pairing with `/prototype`.
+license: MIT
 disable-model-invocation: true
+metadata:
+  author: ContractorKeith
+  version: 1.0.0
+  domain: productivity
+  scope: handoff
+  output-format: handoff-document
+  related-skills: prototype, implement
 ---
 
 # Handoff

@@ -10,7 +10,8 @@ rewriting a skill.
 ├── SKILL.md            # the skill itself
 ├── agents/
 │   └── openai.yaml     # Codex-facing metadata
-└── <REFERENCE>.md      # optional supporting files, SCREAMING-KEBAB names
+└── references/
+    └── <REFERENCE>.md  # optional supporting files, SCREAMING-KEBAB names
 ```
 
 ## SKILL.md frontmatter
@@ -21,6 +22,13 @@ name: <skill-name>            # matches the directory name
 description: <one or two sentences, third person, trigger-rich — this is what
   the model reads to decide relevance. Say what it does AND when to use it.>
 disable-model-invocation: true   # ONLY on user-invoked skills (slash-command style)
+license: MIT
+metadata:
+  author: ContractorKeith
+  version: "1.0.0"
+  domain: engineering
+  scope: implementation
+  output-format: verified-change
 ---
 ```
 
@@ -30,10 +38,17 @@ Model-invoked skills (the agent reaches for them mid-task): `tdd`,
 `code-review`, `debug`, `merge-conflicts`, `research`, `codebase-design`,
 `prototype`. Model-invoked skills omit `disable-model-invocation`.
 
-Skills may also declare `license: MIT` and a `metadata` mapping with string
-values for author, version, domain, scope, output-format, and related-skills.
+Every skill declares its license and a `metadata` mapping with string
+values for author, version, domain, scope, and output-format. Add related-skills
+when useful. Preserve upstream authorship, notices, licenses, and source URLs;
+do not apply MIT to materials with different or unspecified upstream terms.
 These describe the package; execution rules belong in the body. Link supporting
 references from SKILL.md with guidance on when to read them.
+
+Keep supporting Markdown in `references/`, scripts in `scripts/`, and templates
+in `assets/`. Package README, changelog, and license files may stay at the root.
+Reference links are relative to the file containing them. Commands in references
+must state when they run from the skill root instead of the reference directory.
 
 ## agents/openai.yaml
 

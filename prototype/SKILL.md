@@ -1,6 +1,14 @@
 ---
 name: prototype
-description: "The prototype skill builds clearly throwaway code to answer a concrete design question about logic, state, data shape, or UI. Use it when runnable evidence will settle a design choice faster than more discussion."
+description: The prototype skill builds clearly throwaway code to answer a concrete design question about logic, state, data shape, or UI. Use it when runnable evidence will settle a design choice faster than more discussion.
+license: MIT
+metadata:
+  author: ContractorKeith
+  version: 1.0.0
+  domain: architecture
+  scope: experimentation
+  output-format: prototype
+  related-skills: codebase-design, handoff
 ---
 
 # Prototype
@@ -11,8 +19,8 @@ A prototype is a short-lived experiment with one job: answer a design question. 
 
 Name the question from the user's request, nearby code, or a short clarification:
 
-- **Logic, state, or data model** — read [LOGIC.md](LOGIC.md). Build a tiny interactive terminal experiment that drives the hard cases by hand.
-- **Visual or interaction design** — read [UI.md](UI.md). Put several genuinely different variants on one route and let the user switch between them.
+- **Logic, state, or data model** — read [LOGIC.md](references/LOGIC.md). Build a tiny interactive terminal experiment that drives the hard cases by hand.
+- **Visual or interaction design** — read [UI.md](references/UI.md). Put several genuinely different variants on one route and let the user switch between them.
 
 If the request is ambiguous and the user is unavailable, follow the surrounding code: backend or domain module usually means logic; a page or component usually means UI. State that assumption in the prototype.
 

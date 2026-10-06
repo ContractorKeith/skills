@@ -1,7 +1,15 @@
 ---
 name: spec
 description: Turn a grilled idea or the current conversation into a durable, build-ready product spec (PRD), using the repository's language and decisions. Use after `/grill` when a feature is too large for one `/implement` session and needs a clear handoff to `/tickets`.
+license: MIT
 disable-model-invocation: true
+metadata:
+  author: ContractorKeith
+  version: 1.0.0
+  domain: architecture
+  scope: specification
+  output-format: specification
+  related-skills: grill, tickets
 ---
 
 # Spec

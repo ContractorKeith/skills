@@ -1,6 +1,14 @@
 ---
 name: merge-conflicts
 description: Resolve an in-progress Git merge or rebase conflict without losing either change's intent. Use when Git reports unresolved conflict markers during a merge or rebase.
+license: MIT
+metadata:
+  author: ContractorKeith
+  version: 1.0.0
+  domain: engineering
+  scope: integration
+  output-format: resolved-conflicts
+  related-skills: code-review, ship
 ---
 
 # Merge Conflicts

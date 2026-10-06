@@ -1,7 +1,15 @@
 ---
 name: grill
 description: A relentless interview — small batches of related questions — that stress-tests a plan or design before anything gets built, leaving a paper trail of resolved terms (CONTEXT.md) and decisions (ADRs) as it goes. Use when the user wants to pressure-test an idea, sharpen a plan, or says "grill me".
+license: MIT
 disable-model-invocation: true
+metadata:
+  author: ContractorKeith
+  version: 1.0.0
+  domain: architecture
+  scope: planning
+  output-format: decisions
+  related-skills: spec, codebase-design
 ---
 
 # Grill
@@ -45,7 +53,7 @@ write them down the moment they crystallize — not in a batch at the end.
 
 The repo root's `CONTEXT.md` is a glossary and nothing else — no
 implementation details, no specs, no scratch notes. Create it lazily when the
-first term is resolved. Format: [CONTEXT-FORMAT.md](./CONTEXT-FORMAT.md).
+first term is resolved. Format: [CONTEXT-FORMAT.md](references/CONTEXT-FORMAT.md).
 
 During the interview:
 
@@ -70,7 +78,7 @@ Offer to record an Architecture Decision Record only when all three hold:
    for specific reasons.
 
 Miss any one of the three, skip the ADR. Format and what qualifies:
-[ADR-FORMAT.md](./ADR-FORMAT.md).
+[ADR-FORMAT.md](references/ADR-FORMAT.md).
 
 ## After the grill
 

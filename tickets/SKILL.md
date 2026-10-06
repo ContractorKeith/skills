@@ -1,7 +1,15 @@
 ---
 name: tickets
 description: Break an approved spec, plan, or conversation into self-contained tracer-bullet tickets with explicit blocking edges. Use after `/spec` to create buildable work for fresh `/implement` contexts.
+license: MIT
 disable-model-invocation: true
+metadata:
+  author: ContractorKeith
+  version: 1.0.0
+  domain: engineering
+  scope: planning
+  output-format: tickets
+  related-skills: spec, implement
 ---
 
 # Tickets

@@ -2,7 +2,7 @@
 
 Do not settle on the first plausible interface for a deepening candidate.
 Create several genuinely different designs, then compare the trade-offs using
-the vocabulary in [SKILL.md](SKILL.md). Keep the project's domain names from
+the vocabulary in [SKILL.md](../SKILL.md). Keep the project's domain names from
 `CONTEXT.md` in every design.
 
 ## Frame the design space

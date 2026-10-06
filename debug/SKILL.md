@@ -4,7 +4,7 @@ description: Diagnose hard bugs and performance regressions with a disciplined e
 license: MIT
 metadata:
   author: ContractorKeith
-  version: "1.1.0"
+  version: 1.1.1
   domain: engineering
   scope: debugging
   output-format: verified-fix
@@ -44,7 +44,7 @@ symptom. Try the least costly fit first:
 9. A differential check that compares versions or configurations using one
    input.
 10. A human-guided shell loop only when automation cannot reach the action.
-    Copy and tailor [hitl-loop.template.sh](./scripts/hitl-loop.template.sh)
+    Copy and tailor [hitl-loop.template.sh](scripts/hitl-loop.template.sh)
     so the prompts and captured evidence remain repeatable.
 
 Treat the loop like a job-site test setup: make it quick, specific, and

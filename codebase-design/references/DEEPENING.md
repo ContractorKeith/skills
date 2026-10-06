@@ -1,7 +1,7 @@
 # Deepening
 
 Use this guide to consolidate shallow modules without hiding a dependency or
-moving test pain elsewhere. It assumes the vocabulary in [SKILL.md](SKILL.md).
+moving test pain elsewhere. It assumes the vocabulary in [SKILL.md](../SKILL.md).
 
 ## Classify each dependency
 

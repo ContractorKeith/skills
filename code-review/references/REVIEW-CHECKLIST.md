@@ -44,7 +44,7 @@ changed lines. Record important gaps instead of guessing.
 
 ## Design and repository standards
 
-Use the smell baseline in SKILL.md only when it explains a concrete cost.
+Use the smell baseline in [SKILL.md](../SKILL.md) only when it explains a concrete cost.
 Automated formatting belongs to tooling. Repository design preferences outrank
 generic advice; a demonstrated technical defect still requires a finding.
 Do not prescribe an abstraction solely because a pattern has a name.

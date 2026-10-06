@@ -1,11 +1,11 @@
 ---
 name: implement
 description: Builds one well-defined ticket from its acceptance criteria through tests, review, commit, and ticket closure. Use when the user invokes `/implement` for a GitHub Issue or local markdown ticket that is ready to build.
-disable-model-invocation: true
 license: MIT
+disable-model-invocation: true
 metadata:
   author: ContractorKeith
-  version: "1.1.0"
+  version: 1.1.1
   domain: engineering
   scope: implementation
   output-format: verified-change
@@ -47,9 +47,9 @@ confirmation before writing a test.
 
 ## 2. Build in vertical slices
 
-For architecture work, read `/codebase-design`'s `DEEPENING.md` when consolidating
+For architecture work, read `/codebase-design`'s `references/DEEPENING.md` when consolidating
 collaborating modules, and
-`DESIGN-IT-TWICE.md` only when materially different interfaces need comparison.
+`references/DESIGN-IT-TWICE.md` only when materially different interfaces need comparison.
 Do not require a design exercise for routine changes that preserve the existing
 shape. Avoid speculative ports or adapters, and test observable behavior through
 the same interface callers use.

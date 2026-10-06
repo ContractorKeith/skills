@@ -1,7 +1,15 @@
 ---
 name: ship
-description: "The ship skill runs the end-of-work gate before a change is called complete: it executes the full project checks, verifies push and merge access, integrates parallel work in order, and confirms the final Git state. Use it when the user says “ship”, “ship it”, or “land this”, or when closing a multi-branch effort."
+description: 'The ship skill runs the end-of-work gate before a change is called complete: it executes the full project checks, verifies push and merge access, integrates parallel work in order, and confirms the final Git state. Use it when the user says “ship”, “ship it”, or “land this”, or when closing a multi-branch effort.'
+license: MIT
 disable-model-invocation: true
+metadata:
+  author: ContractorKeith
+  version: 1.0.0
+  domain: engineering
+  scope: shipping
+  output-format: verified-delivery
+  related-skills: implement, code-review
 ---
 
 # Ship

@@ -1,7 +1,15 @@
 ---
 name: unslop
 description: Audit a codebase for AI-generated slop and architectural drift, then rank evidence-backed cleanup candidates and guide the chosen change through design and verification. Use when asked to de-slop, simplify, consolidate, or improve an existing codebase's structure, testability, or maintainability.
+license: MIT
 disable-model-invocation: true
+metadata:
+  author: ContractorKeith
+  version: 1.0.0
+  domain: quality
+  scope: audit
+  output-format: cleanup-brief
+  related-skills: codebase-design, code-review
 ---
 
 # Unslop

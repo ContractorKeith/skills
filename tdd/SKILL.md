@@ -1,6 +1,14 @@
 ---
 name: tdd
 description: Runs a disciplined red-green-refactor loop for one observable behavior at a public seam. Use while `/implement` is building a ticket, or whenever a feature or bug fix needs test-first evidence.
+license: MIT
+metadata:
+  author: ContractorKeith
+  version: 1.0.0
+  domain: engineering
+  scope: testing
+  output-format: verified-behavior
+  related-skills: implement, code-review
 ---
 
 # Test-Driven Development
@@ -14,8 +22,8 @@ present, and ADRs that govern the area. Use their domain terms in test names.
 Test only seams already agreed in the ticket or confirmed with the user. If the
 seam is unclear, pause and ask; an invented boundary produces fragile tests.
 
-Read [TESTS.md](./TESTS.md) before choosing the test shape. Read
-[MOCKING.md](./MOCKING.md) whenever a test may replace a dependency.
+Read [TESTS.md](references/TESTS.md) before choosing the test shape. Read
+[MOCKING.md](references/MOCKING.md) whenever a test may replace a dependency.
 
 ## Red
 
