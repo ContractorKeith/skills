@@ -1,6 +1,14 @@
 ---
 name: codebase-design
 description: Provide a shared vocabulary and practical rules for designing deep modules, choosing seams, improving interfaces, and making code easier to test and navigate. Use when designing or restructuring a module, evaluating abstraction depth, or when another skill needs consistent architecture language.
+license: MIT
+metadata:
+  author: ContractorKeith
+  version: "1.1.0"
+  domain: architecture
+  scope: design
+  output-format: design-guidance
+  related-skills: implement, code-review, unslop, prototype
 ---
 
 # Codebase Design
@@ -8,6 +16,17 @@ description: Provide a shared vocabulary and practical rules for designing deep 
 Use this vocabulary whenever you shape or restructure code. Aim to put useful
 behaviour behind an interface that callers can learn quickly. That gives callers
 leverage and keeps changes and verification local for maintainers.
+
+## Use within the workflow
+
+- `/implement` loads this guidance when a ticket changes module structure,
+  interfaces, or dependencies, before choosing test seams.
+- `/code-review` loads it for architectural changes in the Standards pass.
+  Design principles do not create requirements for the Spec pass.
+- `/unslop` uses it to evaluate existing structure and selected cleanups.
+
+Respect repository rules and ADRs. Apply depth proportionately; routine changes
+do not need alternative designs, and hypothetical reuse does not justify ports.
 
 ## Shared vocabulary
 

@@ -4,11 +4,11 @@ description: "Reviews diffs for correctness, security, performance, test coverag
 license: MIT
 metadata:
   author: ContractorKeith
-  version: "1.1.0"
+  version: "1.2.0"
   domain: quality
   scope: review
   output-format: report
-  related-skills: implement, tdd, debug, ship
+  related-skills: codebase-design, implement, tdd, debug, ship
 ---
 
 # Code Review
@@ -89,6 +89,18 @@ separate sequential passes; finish and record one axis before starting the
 other.
 
 ### Standards pass
+
+When the diff changes module structure, interfaces, or dependency placement,
+read `/codebase-design` and use it to assess caller burden, ownership of rules,
+dependency seams, and testability. Read its `DEEPENING.md` for consolidation
+changes. Use `DESIGN-IT-TWICE.md` only if an unresolved interface choice warrants
+a separate design follow-up; review does not start a redesign exercise.
+
+Treat these principles as judgment guidance, not new acceptance criteria.
+Repository rules and ADRs govern architectural choices. Explain concrete impact
+before flagging a shallow module or seam; do not demand adapters or abstractions
+for hypothetical future uses. Keep design findings in Standards, and reserve
+Spec findings for actual ticket requirements.
 
 Read REVIEW-CHECKLIST.md. Check every changed hunk and trace callers, data
 flows, and tests far enough to establish behavior. Check correctness, security,

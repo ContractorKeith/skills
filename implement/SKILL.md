@@ -2,6 +2,14 @@
 name: implement
 description: Builds one well-defined ticket from its acceptance criteria through tests, review, commit, and ticket closure. Use when the user invokes `/implement` for a GitHub Issue or local markdown ticket that is ready to build.
 disable-model-invocation: true
+license: MIT
+metadata:
+  author: ContractorKeith
+  version: "1.1.0"
+  domain: engineering
+  scope: implementation
+  output-format: verified-change
+  related-skills: codebase-design, tdd, code-review, ship
 ---
 
 # Implement
@@ -23,6 +31,10 @@ Resolve the ticket and its source material first.
 - Read linked specs, acceptance criteria, and relevant code before proposing
   a change. Read root `CONTEXT.md` when present, plus applicable ADRs, so the
   implementation uses the project’s established terms and decisions.
+- When the ticket changes modules, interfaces, or dependencies, read
+  `/codebase-design` before choosing the first test seam. Use its vocabulary
+  alongside the project's domain terms and respect existing ADRs. Identify the
+  responsibility, caller-facing contract, and dependency strategy in the plan.
 - State the ticket’s outcome, constraints, and the first test seam in a short
   working plan. If the ticket or spec leaves a real product decision open,
   stop and ask one focused question. Do not use implementation to guess.
@@ -34,6 +46,13 @@ not name testable public boundaries, propose the smallest useful seams and get
 confirmation before writing a test.
 
 ## 2. Build in vertical slices
+
+For architecture work, read `/codebase-design`'s `DEEPENING.md` when consolidating
+collaborating modules, and
+`DESIGN-IT-TWICE.md` only when materially different interfaces need comparison.
+Do not require a design exercise for routine changes that preserve the existing
+shape. Avoid speculative ports or adapters, and test observable behavior through
+the same interface callers use.
 
 Drive `/tdd` one observable behavior at a time. Do not write a wall of tests
 or a whole subsystem before getting the first behavior green.
@@ -78,4 +97,3 @@ When the acceptance criteria, tests, and review are clean:
   unresolved requirement or known regression.
 - Hand off to `/ship` for branch landing: pushing, merging, release-facing
   checks, cleanup, and the final status report all belong there.
-
