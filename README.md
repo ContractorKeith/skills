@@ -16,10 +16,6 @@ directory (`~/.claude/skills`, `~/.codex/skills`, …).
 ## The flow
 
 ```
-                 /ask-kod  ←  "which skill do I use?"
-                     │
-   /kodmap ── too big for one session? map it first
-                     │
    idea ──► /grill ──► small job ──────────► /implement ──► /ship
                      │                          ▲
                      └► /spec ──► /tickets ─────┘ (one ticket per
@@ -36,12 +32,10 @@ pushed, verified.
 
 | Skill | What it does |
 |---|---|
-| `/ask-kod` | Routes you to the right skill or flow for your situation |
 | `/grill` | Relentless interview to stress-test a plan; writes CONTEXT.md + ADRs as it goes |
 | `/spec` | Turns a grilled idea into a written spec |
 | `/tickets` | Splits a spec into tracer-bullet tickets with blocking edges (GitHub Issues via `gh`) |
 | `/implement` | Builds one ticket: tdd slices, code review, commit, close |
-| `/kodmap` | Maps a huge foggy effort as decision tickets, resolved until the way is clear |
 | `/unslop` | Surveys the codebase for slop and architectural drift; produces cleanup candidates |
 | `/handoff` | Compacts the session into a file so a fresh session can pick it up |
 | `/ship` | End-of-work landing gate: gates, merges, push, verified git state |

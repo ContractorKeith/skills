@@ -6,7 +6,7 @@ rewriting a skill.
 ## Layout
 
 ```
-skills/<skill-name>/
+<skill-name>/
 ├── SKILL.md            # the skill itself
 ├── agents/
 │   └── openai.yaml     # Codex-facing metadata
@@ -24,8 +24,8 @@ disable-model-invocation: true   # ONLY on user-invoked skills (slash-command st
 ---
 ```
 
-User-invoked skills (a human types `/name`): `ask-kod`, `kodmap`, `grill`,
-`spec`, `tickets`, `implement`, `unslop`, `handoff`, `ship`.
+User-invoked skills (a human types `/name`): `grill`, `spec`,
+`tickets`, `implement`, `unslop`, `handoff`, `ship`.
 Model-invoked skills (the agent reaches for them mid-task): `tdd`,
 `code-review`, `debug`, `merge-conflicts`, `research`, `codebase-design`,
 `prototype`. Model-invoked skills omit `disable-model-invocation`.
@@ -60,9 +60,9 @@ policy:
 ## Cross-references
 
 Skills reference each other by slash-name: `/grill`, `/spec`, `/tickets`,
-`/implement`, `/tdd`, `/code-review`, `/debug`, `/unslop`, `/kodmap`,
+`/implement`, `/tdd`, `/code-review`, `/debug`, `/unslop`,
 `/merge-conflicts`, `/research`, `/codebase-design`, `/prototype`,
-`/handoff`, `/ship`, `/ask-kod`. Use only these names — no legacy names from
+`/handoff`, `/ship`. Use only these names — no legacy names from
 other skill collections.
 
 ## The main flow
@@ -70,8 +70,7 @@ other skill collections.
 Idea → `/grill` (sharpen it, docs trail) → small job: `/implement` directly;
 big job: `/spec` → `/tickets` → `/implement` per ticket (fresh context each).
 `/implement` drives `/tdd` and closes with `/code-review`. `/ship` is the
-end-of-work landing gate. `/kodmap` sits above the flow for efforts too big
-for one session. `/ask-kod` routes you to the right entry point.
+end-of-work landing gate.
 
 ## Issue tracker
 

@@ -1,6 +1,6 @@
 ---
 name: handoff
-description: "The handoff skill captures the current session in a concise file so a fresh agent can continue without replaying the conversation. Use it when pausing work, switching sessions, or pairing with `/prototype` or `/kodmap`."
+description: "The handoff skill captures the current session in a concise file so a fresh agent can continue without replaying the conversation. Use it when pausing work, switching sessions, or pairing with `/prototype`."
 disable-model-invocation: true
 ---
 
